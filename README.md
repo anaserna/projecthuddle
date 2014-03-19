@@ -1,0 +1,4 @@
+projecthuddle
+=============
+
+first django app
