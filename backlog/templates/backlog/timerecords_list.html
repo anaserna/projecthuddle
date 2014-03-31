@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% comment %}
+    VIEW                TEMPLATE                        URL PATTERN
+    --------------------------------------------------------------------
+    TimeRecordList      timerecords_list.html           /backlog/time/
+{% endcomment %}
+
+{% block title %}Project Huddle - Time Records {% endblock %}
+
+{% block content %}
+	<h2>  All Time Records </h2>
+				
+	<a href="{% url 'backlog:time_record_add' %}">+Add New</a>
+	
+	{% if time_records %}
+	
+		<table>
+		{% for rec in time_records %}
+			<tr>
+			<td><a href="{% url 'backlog:time_record' rec.id %}">{{ rec.day }}</a> </td>
+			<td><a href="{% url 'backlog:time_record_edit' rec.id %}">edit</a> </td>
+			<td><a href="{% url 'backlog:time_record_delete' rec.id %}">delete</a> </td>
+			</tr>
+		{% endfor %}
+		</table>
+		
+	{% else %}
+	
+		<p>No records available. </p>
+		
+	{% endif %}
+
+{% endblock %}

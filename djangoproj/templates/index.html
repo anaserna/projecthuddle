@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}Project Huddle {% endblock %}
+
+{% block content %}
+				<h2>
+					Python Project
+				</h2>
+
+<h3>Libraries Used</h3>
+<h4>Django</h4>
+<p>
+Django is a web framework.
+</p>
+<h4>Report Lab</h4>
+<p>
+Report Lab was used to create the burndown chart.	
+</p>
+
+<h3>Features</h3>
+<p>
+Users can ceate User stories and update estimated and actual time for each story. A user story can be added to the current sprint (only one sprint is supported). Length of sprint can be 1 to 4 weeks.	
+</p>
+
+<h3>Files:</h3>
+<ul>
+	<li>manage.py </li>
+	<li>Procfile</li>
+	<li>requirements.txt - lists package requirements</li>
+	<li>runtime.txt - lists version of python to use</li>
+
+I used virtualenv which creates a virtual environment for python projects
+you can enter the environment and install the libraries you need for your project
+which may conflict with what you use for other projects, so its very very useful
+
+	<li>venv/</li>
+	<ul>
+	<li>lib/</li>
+		<ul>
+		<li>python3.3/</li>
+			<ul>
+			<li>site-packages/  </li>
+				<ul><li>includes all libraries used for this project,</li></ul>
+			</ul>
+		</ul>
+	</ul>
+
+in order to modularize a site, different functions can be made as apps inside a stie
+
+this is the site:
+<li>djangoproj/</li>
+	<ul>
+		<li>settings.py - django settings </li>
+		<li>urls.py </li>
+		<li>views.py  </li>
+		<li>(wsgi.py) - config file </li>
+
+		<li>templates/ </li>
+		<ul> 
+			<li>base_site.html</li>
+			<li>index.html</li>
+		</ul>
+this is the app, there can be more than one app in a site, I only have one
+
+<li>backlog/ </li>
+	<ul>
+		<li>urls.py </li>
+		<li>models.py </li>
+		<li>views.py </li>
+		<li>charts.py </li>
+
+		<li>(admin.py) - I did not use the django admin features </li>
+		<li>(tests.py) - optional and not used by me. This is used to run tests on the application, an excellent feature! djangoproject.com has a nice tutorial on
+test driven development that opened my eyes! but I ran out of time :-/ and did not do </li>
+
+		<li>templates/ </li>
+			<ul>
+				<li>base.html </li>
+				<li>backlog/ </li>
+				<ul>
+					# user story views templates
+					<li>index.html </li>
+					<li>detail.html </li>
+					<li>userstory_form.html </li>
+					<li>userstory_edit.html </li>
+					<li>userstory_confirm_delete.html </li>
+					<li>sprint_backlog.html </li>
+			
+					# time records views templates
+					<li>timerecords_list.html </li>
+					<li>time_record.html </li>
+					<li>timerecord_form.html </li>
+					<li>edit_time_record.html </li>
+					<li>timerecord_confirm_delete.html </li>
+
+						# sprint views templates
+					<li>sprint_list.html </li>
+					<li>settings.html </li>
+					<li>sprint_form.html </li>
+					<li>sprint_edit.html </li>
+					<li>sprint_confirm_delete.html </li>
+				</ul>
+			</ul>
+
+		<li>static/ </li>
+			<ul>
+				<li>backlog/ </li>
+				<li>style.css </li>
+				<li>images/ </li>
+				<ul>
+					<li>backround.png </li>
+				</ul>
+			</ul>
+				
+	</ul>
+</ul>
+
+<h3>Other</h3>
+<p>I used Heroku to host the application and the postgres database.</p>
+<p>I used Git version control program, Heroku uses git to deploy apps.</p>
+
+<h3>Problems, room for improvement</h3>
+<p>The user must enter estimated hours for the whole sprint, for each day, 
+this is not automatically carried through the days as it probably should, until the
+user story has been completed </p>
+{% endblock %}

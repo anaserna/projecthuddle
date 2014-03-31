@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% comment %}
+    VIEW                TEMPLATE                    URL PATTERN
+    --------------------------------------------------------------------
+    SprintCreateView    sprint_form.html            /backlog/settings/add/
+{% endcomment %}
+
+{% block title %}Project Huddle - Add New Sprint {% endblock %}
+
+{% block content %}
+	<h3> Sprint settings</h3>
+	<form action="" method="post">{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Submit" />
+	</form>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% comment %}
+    VIEW                TEMPLATE                    URL PATTERN
+    --------------------------------------------------------------------
+    SprintUpdateView    sprint_edit.html            /backlog/settings/edit/<id>
+{% endcomment %}
+
+{% block title %}Project Huddle - Edit Sprint Settings {% endblock %}
+
+{% block content %}
+
+	<h3>Edit Sprint Settings</h3>
+	<form action="" method="post">{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Update" />
+	</form>
+{% endblock %}

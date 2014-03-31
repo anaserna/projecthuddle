@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% comment %}
+    VIEW                TEMPLATE                        URL PATTERN
+    --------------------------------------------------------------------
+    TimeRecordView      time_record.html                /backlog/time/<id>
+{% endcomment %}
+
+{% block title %}Project Huddle - {{ object.day }} - {{ object.user_story }} {% endblock %}
+
+{% block content %}
+	{{ object.day }} - {{ object.user_story }} <br />
+	<b>Estimated Time:</b> {{ object.estimated_time }}  <br />
+	<b>Actual Time:</b> {{ object.actual_time }} <br />
+
+{% endblock %}

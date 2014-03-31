@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% comment %}
+    VIEW                TEMPLATE                        URL PATTERN
+    --------------------------------------------------------------------
+    TimeRecordUpdate    edit_time_record.html           /backlog/time/edit/<id>
+{% endcomment %}
+
+{% block title %}Project Huddle - Edit Time Record {% endblock %}
+
+{% block content %}
+
+	<h3>Edit Time Record</h3>
+	<form action="" method="post">{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Update" />
+	</form>
+{% endblock %}

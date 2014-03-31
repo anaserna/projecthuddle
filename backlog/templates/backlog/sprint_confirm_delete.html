@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% comment %}
+    VIEW                TEMPLATE                    URL PATTERN
+    --------------------------------------------------------------------
+    SprintDeleteView    sprint_confirm_delete.html  /backlog/delete/<id>
+{% endcomment %}
+
+{% block title %}Project Huddle - Confirm Delete {% endblock %}
+
+{% block content %}
+	<form action="" method="post">{% csrf_token %}
+    	<p>Are you sure you want to delete "{{ object }}"?</p>
+    	<input type="submit" value="Confirm" />
+	</form>
+
+{% endblock %}

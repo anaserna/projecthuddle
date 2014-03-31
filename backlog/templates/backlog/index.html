@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% comment %}
+    VIEW                TEMPLATE                    URL PATTERN
+    --------------------------------------------------------------------
+    IndexView           index.html                  /backlog/
+{% endcomment %}
+
+{% block title %}Project Huddle - Backlog {% endblock %}
+
+{% block content %}
+	<h2>Backlog</h2>
+				
+	<a href="{% url 'backlog:userstory_add' %}">+Add New</a>
+	
+	{% if backlog_list %}
+		<table>
+		{% for us in backlog_list %}
+			<tr>
+				<td><a href="{% url 'backlog:detail' us.id %}">{{ us.title }}</a> </td>
+				<td><a href="{% url 'backlog:userstory_edit' us.id %}">edit</a> </td>
+				<td><a href="{% url 'backlog:userstory_delete' us.id %}">delete</a> </td>
+			</tr>
+		{% endfor %}
+		</table>
+	{% else %}
+		<p>No User Stories available. </p>
+	{% endif %}
+
+{% endblock %}

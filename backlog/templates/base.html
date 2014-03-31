@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'backlog/style.css' %}" />
+    <title>{% block title %}Project Huddle{% endblock %}</title>
+</head>
+
+<body>
+
+<div id="head-container">
+	<div id="header">
+		<h1>
+			Project Huddle 
+		</h1>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation">
+		<ul>
+			<li><a href="{% url 'index' %}">Home</a></li>
+			<li><a href="{% url 'backlog:index' %}">Backlog</a></li>
+			<li><a href="{% url 'backlog:sprint_backlog' %}">Sprint</a></li>
+			<li><a href="{% url 'backlog:settings' %}">Settings</a></li>
+		</ul>
+	</div>
+</div>
+<div id="content-container">
+	<div id="content-container2">
+		<div id="content-container3">
+			<div id="content">
+
+		{% block content %}
+		
+		{% endblock %}
+			
+			</div>
+			<div id="aside">
+			{% block sidebar %}
+				<h3>
+					Product Vision: 
+				</h3>
+				<p>
+					Project Huddle is an agile project management application
+					that helps scrum teams keep track of projects.  In agile project
+					management User Stories are descriptions of project requrements 
+					broken down into manageable parts that help the team plan their
+					project. This tool tracks lists of user stories and estimated
+					time it takes to complete each story. Actual time spent can also
+					be tracked.  The time is presented in a burndown chart 
+					to help the team know if their goals are being reached or
+					if adjustments need to be made.
+				</p>
+			{% endblock %}
+			</div>
+		</div>
+	</div>
+	<div id="footer-container">
+		<div id="footer">
+			Copyright © Project Huddle, 2014
+		</div>
+	</div>
+</div>

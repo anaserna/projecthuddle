@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% comment %}
+    VIEW                TEMPLATE                    URL PATTERN
+    --------------------------------------------------------------------
+    SprintListView      sprint_list.html            /backlog/settings/
+{% endcomment %}
+
+{% block title %}Project Huddle - Settings {% endblock %}
+
+{% block content %}
+	<h2>Sprint Settings</h2>
+				
+	{% if sprint_list %}
+	
+		{% for sprint in sprint_list %}
+			<p><a href="{% url 'backlog:view_sprint' sprint.id %}">
+				Current sprint begins:  {{ sprint.start_date }} 
+				Lasts for {{ sprint.sprint_days }} days</a> 
+			(<a href="{% url 'backlog:sprint_edit' sprint.id %}">edit</a>) 
+			(<a href="{% url 'backlog:sprint_delete' sprint.id %}">delete</a>)
+			</p>
+		{% endfor %}
+		
+	{% else %}
+	
+		<a href="{% url 'backlog:create_sprint' %}">+Create New Sprint</a>
+		
+	{% endif %}
+
+{% endblock %}

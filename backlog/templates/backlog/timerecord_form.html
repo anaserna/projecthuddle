@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% comment %}
+    VIEW                TEMPLATE                        URL PATTERN
+    --------------------------------------------------------------------
+    TimeRecordCreate    timerecord_form.html            /backlog/time/add/
+{% endcomment %}
+
+{% block title %}Project Huddle - Create Time Record {% endblock %}
+
+{% block content %}
+
+	<h3>Create Time Record</h3>
+	
+	<form action="" method="post">{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="Create" />
+	</form>
+	
+{% endblock %}

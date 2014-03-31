@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% comment %}
+    VIEW                TEMPLATE                    URL PATTERN
+    --------------------------------------------------------------------
+    SprintDetailView    settings.html               /backlog/settings/<id>/
+{% endcomment %}
+
+{% block title %}Project Huddle - settings {% endblock %}
+
+{% block content %}
+	<h2>Sprint Information</h2>
+	<p>
+		<b>Length of sprint:</b> {{ object.sprint_days }}
+	</p>
+
+	<p>
+		<b>Start Date:</b> {{ object.start_date }}
+	</p>
+				
+	<p>Number of developers: {{ object.num_dev }}</p>
+{% endblock %}

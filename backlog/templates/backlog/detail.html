@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% comment %}
+    VIEW                TEMPLATE                    	URL PATTERN
+    --------------------------------------------------------------------
+    DetailView           detail.html                  	/backlog/<id>
+{% endcomment %}
+
+{% block title %}Project Huddle - {{ object.title }} {% endblock %}
+
+{% block content %}
+
+	<h2>{{ object.title }}</h2>
+	
+	<p> <b>Description:</b> {{ object.description }} </p>
+
+	<p> <b>Validation:</b> {{ object.validation }} </p>
+				
+	<p><b>Value:</b> {{ object.value }} <b>Effort:</b> {{ object.effort }} </p>
+					
+	<p><b>Submitted by:</b> {{ object.submitted_by }} </p>
+	<p><b>Assigned to:</b> {{ object.assigned_to }} </p>
+				
+	<br />
+					
+					
+	{% if time_records %}
+		<table border=1>
+			<tr><th>Day</th> <th>Estimated Hours</th> <th>Actual Hours</th></tr>
+			{% for rec in time_records %}
+			<tr>
+				<td>{{ rec.day }}</td>
+				<td>{{ rec.estimated_time }}</td>
+				<td>{{ rec.actual_time }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	{% else %}
+		<p>No time records available.  </p>
+	{% endif %}
+	<a href="{% url 'backlog:time_record_add' %}">+Add New Time Record</a>
+				
+{% endblock %}
