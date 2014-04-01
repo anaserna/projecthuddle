@@ -23,27 +23,20 @@ Users can ceate User stories and update estimated and actual time for each story
 </p>
 
 <h3>Files:</h3>
+<p>The important files to look at are <br />
+	backlog/<br />
+	&nbsp; &nbsp; &nbsp; models.py<br />
+	&nbsp; &nbsp; &nbsp; views.py<br />
+	&nbsp; &nbsp; &nbsp; urls.py<br />
+	&nbsp; &nbsp; &nbsp; charts.py<br />
+</p>
+
+<p>All files: </p>
 <ul>
 	<li>manage.py </li>
 	<li>Procfile</li>
 	<li>requirements.txt - lists package requirements</li>
 	<li>runtime.txt - lists version of python to use</li>
-
-I used virtualenv which creates a virtual environment for python projects
-you can enter the environment and install the libraries you need for your project
-which may conflict with what you use for other projects, so its very very useful
-
-	<li>venv/</li>
-	<ul>
-	<li>lib/</li>
-		<ul>
-		<li>python3.3/</li>
-			<ul>
-			<li>site-packages/  </li>
-				<ul><li>includes all libraries used for this project,</li></ul>
-			</ul>
-		</ul>
-	</ul>
 
 in order to modularize a site, different functions can be made as apps inside a stie
 
@@ -122,6 +115,8 @@ test driven development that opened my eyes! but I ran out of time :-/ and did n
 <h3>Problems, room for improvement</h3>
 <p>After creating time records, the view should return to the user story to 
 	which the time record belongs, instead of the detail view</p>
+<p>Not very user friendly, user may not know where to start and how to 
+	navigate through the program </p>
 <p>The user must enter estimated hours for the whole sprint, for each day, 
 this is not automatically carried through the days as it probably should, until the
 user story has been completed </p>

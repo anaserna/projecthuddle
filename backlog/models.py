@@ -75,7 +75,7 @@ class TimeRecord(models.Model):
     actual_time = models.IntegerField(default=0, help_text="Time in hours") 
     estimated_time = models.IntegerField(default=0, help_text="Time in hours")
     user_story = models.ForeignKey(UserStory)
-    day = models.DateField()
+    day = models.DateField(help_text="eg. '2014-03-17'")
     
     #there should only be one record per user story per day
     class Meta:
@@ -123,7 +123,7 @@ class Sprint(models.Model):
     
     #length in days of sprint.
     sprint_days = models.IntegerField(choices=CHOICES, default=14)
-    start_date = models.DateField()
+    start_date = models.DateField(help_text="eg. '2014-03-17'")
     #number of developers that work on project
     num_dev = models.IntegerField(default=1) 
     
