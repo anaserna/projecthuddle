@@ -62,7 +62,7 @@ WSGI_APPLICATION = 'djangoproj.wsgi.application'
 #        'ENGINE':'django.db.backends.postgresql_psycopg2',
 #        'NAME': 'huddlebase',
 #        'USER': 'anawagner',
-#        'PASSWORD': 'djeivm17l',
+#        'PASSWORD': '',
 #        'HOST': 'localhost',
 #        'PORT': '5432',
 #    }
@@ -72,10 +72,10 @@ WSGI_APPLICATION = 'djangoproj.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd8lkh6ap1p3j1v',
-        'USER': 'umtcbbnkynhspc',
-        'PASSWORD': 'FZVtzn3MD28a6QmM-K5OWtul_1',
-        'HOST': 'ec2-54-204-41-249.compute-1.amazonaws.com',
+        #'NAME': 'd8lkh6ap1p3j1v',
+        #'USER': 'umtcbbnkynhspc',
+        #'PASSWORD': 'FZVtzn3MD28a6QmM-K5OWtul_1',
+        #'HOST': 'ec2-54-204-41-249.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
